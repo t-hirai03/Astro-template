@@ -1,0 +1,13 @@
+@use "../Global/" as *;
+
+.l-wrapper {
+   position: relative;
+   margin: 0 auto;
+   padding: 0 40px;
+   max-width: 1180px;
+   width: 100%;
+
+   @include MQ("md") {
+      padding: 0 20px;
+   }
+}
