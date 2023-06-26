@@ -1,0 +1,43 @@
+:root {
+  // ratio
+  --ratio: 1.5;
+  // 11px
+  --s-3: calc(var(--s0) * 0.6875);
+  // 12px
+  --s-2: calc(var(--s0) * 0.75);
+  // 14px
+  --s-1: calc(var(--s0) * 0.875);
+  // 16px
+  --s0: 1rem;
+  // 20px
+  --s1: calc(var(--s0) * 1.25);
+  // 24px
+  --s2: calc(var(--s0) * var(--ratio));
+  // 32px
+  --s3: calc(var(--s0) * 2);
+  // 40px
+  --s4: calc(var(--s0) * 2.5);
+  // 54px
+  --s5: calc(var(--s2) * var(--ratio) * var(--ratio));
+  // 80px
+  --s8: calc(var(--s0) * 5);
+  // 128px
+  --s12: calc(var(--s0) * 8);
+  // 160px
+  --s12: calc(var(--s0) * 10);
+
+  // font-size
+  --font-size-smallest: var(--s-3);
+  --font-size-small: var(--s-2);
+  --font-size-smallish: var(--s-1);
+  --font-size-base: var(--s0);
+  --font-size-biggish: var(--s1);
+  --font-size-biggest: var(--s2);
+  --font-size-strong: var(--s3);
+  --font-size-strongish: var(--s4);
+  --font-size-strongest: var(--s5);
+
+  --font-size-fv: var(--s8);
+  --font-size-deco: var(--s12);
+  --font-size-deco-big: var(--s16);
+}

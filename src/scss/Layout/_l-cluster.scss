@@ -1,0 +1,33 @@
+@use '../Global/' as *;
+
+.l-cluster {
+ --space: calc(16px / 2);
+
+ & > * {
+  display: flex;
+  margin: calc(var(--space) / 2 * -1);
+
+  flex-wrap: wrap;
+  align-items: center;
+ }
+
+ & > * > * {
+  margin: calc(var(--space) / 2);
+ }
+}
+
+.l-cluster--large {
+ --space: 81px;
+
+ & > * {
+  display: flex;
+  margin: calc(var(--space) / 2 * -1);
+
+  flex-wrap: wrap;
+  align-items: center;
+ }
+
+ & > * > * {
+  margin: calc(var(--space) / 2);
+ }
+}
