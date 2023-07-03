@@ -1,7 +1,11 @@
 ---
+/* コンポーネント */
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+/* scss */
+import '../scss/style.scss';
 
+/* props */
 export interface Props {
 	title: string;
 }
@@ -13,12 +17,11 @@ const { title } = Astro.props;
 <html lang="jp">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description">
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
-		<meta content="概要文を120文字程度" name="description">
+		<meta name="description" content="Astro description">
 		<meta property="og:image" content="サムネイル画像の URL" />
 		<script type="module" src="./assets/js/common.js"></script>
 	</head>
