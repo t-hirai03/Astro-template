@@ -1,10 +1,30 @@
 import { defineConfig } from "astro/config";
+import compress from "astro-compress";
+import relativeLinks from 'astro-relative-links';
+import htmlMinify from "@frontendista/astro-html-minify";
 
 export default defineConfig({
-  base: "/dist",
+  base: "",
   outDir: './dist',
+  build: {
+    format: 'file',
+  },
+  server: {
+    // 開発サーバーが立ち上がったらブラウザを自動で開かせる
+    open: true,
+  },
+  integrations: [
+    compress(),
+    relativeLinks(),
+    htmlMinify({
+      reportCompressedSize: false,
+      htmlTerserMinifierOptions: {
+        removeComments: false,
+      },
+  }),],
   vite: {
     build: {
+      minify: true,
       rollupOptions: {
         output: {
           assetFileNames: (assetInfo) => {
