@@ -1,7 +1,6 @@
 import { defineConfig } from "astro/config";
 import compress from "astro-compress";
 import relativeLinks from 'astro-relative-links';
-import htmlMinify from "@frontendista/astro-html-minify";
 
 export default defineConfig({
   base: "",
@@ -14,14 +13,11 @@ export default defineConfig({
     open: true,
   },
   integrations: [
-    compress(),
+    compress({
+      img: false,
+    }),
     relativeLinks(),
-    htmlMinify({
-      reportCompressedSize: false,
-      htmlTerserMinifierOptions: {
-        removeComments: false,
-      },
-  }),],
+  ],
   vite: {
     build: {
       minify: true,
