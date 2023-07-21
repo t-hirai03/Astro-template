@@ -18,6 +18,8 @@
     ------------------------------------------------*/
 @use "Project";
 
-/* Utility (prefix: u-)
+/* tailwind.css
     ------------------------------------------------*/
-@use "Utility";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
