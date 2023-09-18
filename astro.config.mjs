@@ -1,5 +1,4 @@
 import { defineConfig } from "astro/config";
-import compress from "astro-compress";
 import relativeLinks from 'astro-relative-links';
 
 export default defineConfig({
@@ -13,11 +12,9 @@ export default defineConfig({
     open: true,
   },
   integrations: [
-    compress({
-      img: false,
-    }),
     relativeLinks(),
   ],
+  compressHTML: false,
   vite: {
     build: {
       minify: true,
