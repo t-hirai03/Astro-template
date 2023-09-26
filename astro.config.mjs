@@ -1,26 +1,26 @@
 import { defineConfig } from "astro/config";
 import relativeLinks from 'astro-relative-links';
+import preact from "@astrojs/preact";
 
+// https://astro.build/config
 export default defineConfig({
   base: "",
   outDir: './dist',
   build: {
-    format: 'file',
+    format: 'file'
   },
   server: {
     // 開発サーバーが立ち上がったらブラウザを自動で開かせる
-    open: true,
+    open: true
   },
-  integrations: [
-    relativeLinks(),
-  ],
+  integrations: [relativeLinks(), preact()],
   compressHTML: false,
   vite: {
     build: {
       minify: true,
       rollupOptions: {
         output: {
-          assetFileNames: (assetInfo) => {
+          assetFileNames: assetInfo => {
             let extType = assetInfo.name.split('.')[1];
             if (/ttf|otf|eot|woff|woff2/i.test(extType)) {
               extType = 'fonts';
@@ -32,10 +32,10 @@ export default defineConfig({
               return `assets/css/style.css`;
             }
             return `assets/${extType}/[name][extname]`;
-          },
+          }
         },
-        entryFileNames: 'assets/js/[name].js',
-      },
-    },
-  },
+        entryFileNames: 'assets/js/[name].js'
+      }
+    }
+  }
 });
