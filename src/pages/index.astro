@@ -1,12 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Greeting from '../components/Greeting.jsx';
+const pageTitle = "Home Page";
 ---
 
-<Layout title="page title">
+<Layout title={pageTitle}>
   <main>
     <p class="w-full text-center">
       index.astro
     </p>
+    <Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
   </main>
 </Layout>
 
