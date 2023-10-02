@@ -36,12 +36,5 @@ export default defineConfig({
         entryFileNames: 'assets/js/[name].js'
       },
     },
-    css: {
-      preprocessorOptions: {
-        // scss: {
-        //   additionalData: '$NODE_ENV: "${process.env.NODE_ENV}";@debug "NODE_ENV: #{$NODE_ENV}";',
-        // },
-      },
-    },
   }
 });
