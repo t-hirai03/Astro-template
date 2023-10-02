@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build-development": "cross-env NODE_ENV=development astro build --mode development",
+    "build-production": "cross-env NODE_ENV=production astro build --mode production",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -15,12 +16,14 @@
     "astro-relative-links": "^0.3.4",
     "autoprefixer": "^10.4.15",
     "postcss": "^8.4.29",
-    "preact": "^10.17.1",
     "sass": "^1.67.0",
     "tailwindcss": "^3.3.3"
   },
   "volta": {
     "node": "18.17.1",
     "npm": "9.6.7"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
   }
 }
