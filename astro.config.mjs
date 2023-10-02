@@ -1,6 +1,5 @@
 import { defineConfig } from "astro/config";
 import relativeLinks from 'astro-relative-links';
-import preact from "@astrojs/preact";
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,7 +12,7 @@ export default defineConfig({
     // 開発サーバーが立ち上がったらブラウザを自動で開かせる
     open: true
   },
-  integrations: [relativeLinks(), preact()],
+  integrations: [relativeLinks()],
   compressHTML: false,
   vite: {
     build: {
@@ -35,7 +34,14 @@ export default defineConfig({
           }
         },
         entryFileNames: 'assets/js/[name].js'
-      }
-    }
+      },
+    },
+    css: {
+      preprocessorOptions: {
+        // scss: {
+        //   additionalData: '$NODE_ENV: "${process.env.NODE_ENV}";@debug "NODE_ENV: #{$NODE_ENV}";',
+        // },
+      },
+    },
   }
 });
