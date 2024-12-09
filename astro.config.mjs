@@ -1,16 +1,16 @@
 import { defineConfig } from "astro/config";
-import relativeLinks from 'astro-relative-links';
+import relativeLinks from "astro-relative-links";
 
 // https://astro.build/config
 export default defineConfig({
   base: "",
-  outDir: './dist',
+  outDir: "./dist",
   build: {
-    format: 'file'
+    format: "file",
   },
   server: {
     // 開発サーバーが立ち上がったらブラウザを自動で開かせる
-    open: true
+    open: true,
   },
   integrations: [relativeLinks()],
   compressHTML: false,
@@ -20,21 +20,21 @@ export default defineConfig({
       rollupOptions: {
         output: {
           assetFileNames: assetInfo => {
-            let extType = assetInfo.name.split('.')[1];
+            let extType = assetInfo.name.split(".")[1];
             if (/ttf|otf|eot|woff|woff2/i.test(extType)) {
-              extType = 'fonts';
+              extType = "fonts";
             }
             if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
-              extType = 'images';
+              extType = "images";
             }
-            if (extType === 'css') {
+            if (extType === "css") {
               return `assets/css/style.css`;
             }
             return `assets/${extType}/[name][extname]`;
-          }
+          },
         },
-        entryFileNames: 'assets/js/[name].js'
+        entryFileNames: "assets/js/[name].js",
       },
     },
-  }
+  },
 });

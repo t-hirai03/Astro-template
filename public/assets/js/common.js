@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 // Import module
-import './module/header.js';
+import "./module/header.js";
